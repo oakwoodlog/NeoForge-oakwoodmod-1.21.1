@@ -1,6 +1,8 @@
 package net.oakwoodlog.oakwoodmod;
 
 import net.minecraft.world.item.CreativeModeTabs;
+import net.oakwoodlog.oakwoodmod.block.ModBlocks;
+import net.oakwoodlog.oakwoodmod.item.ModCreativeModeTabs;
 import net.oakwoodlog.oakwoodmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -40,7 +42,13 @@ public class OakWoodMod
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        // Register creative mode tab
+        ModCreativeModeTabs.register(modEventBus);
+
+        // Register items
         ModItems.register(modEventBus);
+        // Register blocks
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -60,6 +68,11 @@ public class OakWoodMod
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.DANIEL);
             event.accept(ModItems.ANTIDANIEL);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.DANIEL_BLOCK);
+            event.accept(ModBlocks.ANTIDANIEL_BLOCK);
         }
     }
 

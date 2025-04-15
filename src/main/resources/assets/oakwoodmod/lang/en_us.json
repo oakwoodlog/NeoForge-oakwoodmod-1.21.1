@@ -1,4 +1,10 @@
 {
   "item.oakwoodmod.daniel": "Daniel",
-  "item.oakwoodmod.antidaniel": "Anti-Daniel"
+  "item.oakwoodmod.antidaniel": "Anti-Daniel",
+
+  "block.oakwoodmod.daniel_block" : "Block of Daniel",
+  "block.oakwoodmod.antidaniel_block" : "Block of Anti-Daniel",
+
+  "creativetab.oakwoodmod.daniel_items" : "Daniel Items",
+  "creativetab.oakwoodmod.daniel_blocks" : "Daniel Blocks"
 }
